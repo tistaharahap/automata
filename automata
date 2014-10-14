@@ -1,0 +1,35 @@
+#!/bin/sh
+echo "Install Homebrew"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew doctor
+
+echo "Install Cask"
+brew install caskroom/cask/brew-cask
+
+echo "Install iTerm2"
+brew cask install iterm2
+
+echo "Install OhMyZSH"
+curl -L http://install.ohmyz.sh | sh
+
+echo "Install Google Chrome"
+brew cask install google-chrome
+
+echo "Install Sublime Text2"
+brew cask install sublime-text
+
+echo "Install Skype"
+brew cask install skype
+
+echo "Install MacDown"
+brew cask install macdown
+
+echo "Install SequelPro"
+brew cask install sequel-pro
+
+echo "Install Alfred2"
+brew cask install alfred
+echo "Open Alfred & Link Casks"
+open /opt/homebrew-cask/Caskroom/alfred/2.5_299/Alfred\ 2.app
+sleep 5
+brew cask alfred link
